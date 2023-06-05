@@ -18,12 +18,15 @@
       height: 100%;
       object-fit: cover;
     }
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 <body>
   <div id="video-container">
-    <video id="fullscreen-video" controls>
-      <source src="aiaioh.mp4" type="video/mp4">
+    <video id="fullscreen-video" controls class="hidden">
+      <source src="path/to/video.mp4" type="video/mp4">
     </video>
   </div>
 
@@ -36,6 +39,11 @@
       videoContainer.requestFullscreen().catch(function(error) {
         console.log('Fullscreen error:', error);
       });
+    });
+
+    video.addEventListener('loadedmetadata', function() {
+      video.controls = false;
+      video.classList.remove('hidden');
     });
   </script>
 </body>
