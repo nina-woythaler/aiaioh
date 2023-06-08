@@ -34,16 +34,13 @@
     var videoContainer = document.getElementById('video-container');
     var video = document.getElementById('fullscreen-video');
 
-    document.addEventListener('keydown', function(event) {
-      if (event.code === 'Space') {
-        event.preventDefault();
-        video.play().catch(function(error) {
-          console.log('Play error:', error);
-        });
-        videoContainer.requestFullscreen().catch(function(error) {
-          console.log('Fullscreen error:', error);
-        });
-      }
+    videoContainer.addEventListener('click', function() {
+      video.play().catch(function(error) {
+        console.log('Play error:', error);
+      });
+      videoContainer.requestFullscreen().catch(function(error) {
+        console.log('Fullscreen error:', error);
+      });
     });
 
     video.addEventListener('loadedmetadata', function() {
