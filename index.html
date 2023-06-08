@@ -43,7 +43,7 @@
       });
     });
     
-    videoContainer.addEventListener('keydown', function(event) {
+    document.addEventListener('keydown', function(event) {
       if (event.code === 'Space') {
         event.preventDefault();
         video.play().catch(function(error) {
@@ -59,6 +59,10 @@
       video.controls = false;
       video.classList.remove('hidden');
     });
+    
+    // Set focus on the document to capture keydown events
+    document.body.setAttribute('tabindex', '0');
+    document.body.focus();
   </script>
 </body>
 </html>
