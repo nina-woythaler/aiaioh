@@ -58,6 +58,7 @@
     video.addEventListener('loadedmetadata', function() {
       video.controls = false;
       video.classList.remove('hidden');
+      video.loop = true; // Enable video looping
     });
     
     // Set focus on the document to capture keydown events
