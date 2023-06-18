@@ -42,7 +42,7 @@
         console.log('Fullscreen error:', error);
       });
     });
-    
+
     document.addEventListener('keydown', function(event) {
       if (event.code === 'Space') {
         event.preventDefault();
@@ -58,9 +58,9 @@
     video.addEventListener('loadedmetadata', function() {
       video.controls = false;
       video.classList.remove('hidden');
-      video.loop = true; // Enable video looping
+      video.loop = true;
     });
-    
+
     // Set focus on the document to capture keydown events
     document.body.setAttribute('tabindex', '0');
     document.body.focus();
